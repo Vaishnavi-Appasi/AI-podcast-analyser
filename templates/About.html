@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Summary</title>
+    <style>
+        /* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1b1b2f);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end; /* Moves navbar to the right */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+.su{
+    padding-right: 80%;
+    font-size: 20px;
+    font-weight: 700;
+    color: #00a8ff;
+    text-shadow: 0px 0px 15px rgba(0, 168, 255, 0.8);
+
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00a8ff;
+}
+
+.summary-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.summary-box {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+    border-radius: 15px;
+    padding: 30px;
+    width: 60%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.sb{
+    font-size: 50px;
+    font-weight: 700;
+    color: #00a8ff;
+    text-shadow: 0px 0px 15px rgba(0, 168, 255, 0.8);
+
+}
+.psb{
+    font-size: 28px;
+    font-weight: 300;
+    margin-top: 10px;
+    max-width: 950px;
+}
+.tn{
+        display: flex;
+        flex-direction: column;
+    
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+
+.ai-powered {
+    font-size: 60px;
+    font-weight: 700;
+    color: #00a8ff;
+    text-shadow: 0px 0px 15px rgba(0, 168, 255, 0.8);
+}
+
+.podcast-summarizer {
+    font-size: 48px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    max-width: 600px;
+}
+
+.input-container {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.input-box {
+    width: 300px;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: 0.3s;
+}
+
+.input-box::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-box:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #00a8ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 168, 255, 0.8);
+}
+
+.submit-btn:hover {
+    background: #0097e6;
+    box-shadow: 0px 0px 15px rgba(0, 168, 255, 1);
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Team.html">Team</a></li>
+            <li><a href="About.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="summary-container">
+        <div class="summary-box">
+            <h2 class="sb">About the Podcast Summarizer</h2>
+            <p class="psb">
+                Our AI-powered Podcast Summarizer transforms lengthy podcast episodes into concise, easy-to-read summaries. 
+                Using advanced speech-to-text transcription and NLP models, it extracts key insights, highlights, and takeaways, 
+                making it easier to consume audio content quickly.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

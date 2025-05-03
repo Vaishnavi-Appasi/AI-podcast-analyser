@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Podcast Summary</title>
+    <style>
+    body {
+    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1b1b2f);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    font-family: Roboto;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+    .small {
+    width: 1200px;        /* Fixed width */
+    height: 50px;       /* Fixed height */
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    color:white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    resize: both; /* Allows both horizontal and vertical resizing */
+    letter-spacing: 1px;
+    line-height: 30px;
+    word-spacing: 2px;
+}
+.big {
+    width: 1200px;        /* Fixed width */
+    height: 300px;       /* Fixed height */
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    color:white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline: none;
+    resize: both; /* Allows both horizontal and vertical resizing */
+    letter-spacing: 1px;
+    line-height: 30px;
+    word-spacing: 2px;
+}
+    </style>
+</head>
+<body>
+    <h1>Podcast Analysis</h1>
+
+    <h3>🎵 Audio</h3>
+    <audio controls>
+        <source src="{{ audio_url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h3>📝 Transcription</h3>
+    <textarea class="big" readonly>{{ transcription }}</textarea>
+
+    <h3>📄 Summary</h3>
+    <textarea class="small" readonly>{{ summary }}</textarea>        
+
+
+</body>
+</html>
