@@ -5,9 +5,9 @@ from modules.transcribe import transcribe_audio
 from modules.summarize import summarize_text
 
 app = Flask(__name__)
-app.secret_key = 'YOUR_SECRET_KEY'
+app.secret_key = 'YOUR_SECRET_KEY'  # Make sure to use a secure secret key in production
 
-output_dir = r"C:\Users\DELL\OneDrive\Documents\coding\AI podcast analyzer\data\output"
+output_dir = r"data/output"
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
@@ -34,20 +34,22 @@ def index():
 
         clear_old_results()
 
+        # Download audio
         download_audio(youtube_url)
-        audio_path="data/output/podcast_audio.mp3"
+        audio_path = "data/output/podcast_audio.mp3"
         print("Audio downloaded successfully.")
 
-        print(audio_path)
-        transcription = transcribe_audio(audio_path)
+        # Transcribe audio
+        transcription, detected_language = transcribe_audio(audio_path)
         print("Transcription completed.")
 
+        # Summarize transcription
         summary = summarize_text(transcription)
         print("Summary generated.")
 
+        # Store transcription and summary in session for later use
         session['transcription'] = transcription
         session['summary'] = summary
-        
 
         return redirect(url_for('summary'))
 
@@ -56,7 +58,6 @@ def index():
 @app.route('/get_audio')
 def get_audio():
     return send_file("data/output/podcast_audio.mp3")
-
 
 @app.route('/summary')
 def summary():
@@ -67,4 +68,3 @@ def summary():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-
